@@ -1,0 +1,7 @@
+import Api from "./api";
+
+export const createEquipe = (data) => Api.post('/equipe', data).then(res => res.data);
+export const getEquipes = () => Api.get('/equipe').then(res => res.data);
+export const getEquipeByJoueur = (id) => Api.get('/equipe/joueur/' + id ).then(res => res.data);
+export const updateEquipe = (id,data) => Api.patch('/equipe/' + id, data).then(res => res.data);
+export const removeEquipe = (id) => Api.delete('/equipe/'+id).then(res => res.data);
