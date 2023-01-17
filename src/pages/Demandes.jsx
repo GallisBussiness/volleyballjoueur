@@ -72,7 +72,7 @@ function Demandes() {
 
     const header = renderHeader();
 
-    const CoequipierTemplate = (row) => `${row.idCapitaine.prenom} ${row.idCapitaine.nom}` ;
+    const CoequipierTemplate = (row) => `${row?.idCapitaine?.prenom ?? 'inconnue'} ${row?.idCapitaine?.nom ?? 'inconnue'}` ;
 
     const activationTemplate = (row) => {
         return <Switch checked={row.isActive} onChange={(event) => {

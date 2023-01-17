@@ -80,7 +80,7 @@ import { createEquipe } from '../services/equipe-service'
     const header = renderHeader();
     const actionBodyTemplate = (rowData) => {
         return <div className="flex items-center justify-center space-x-1">
-            {!rowData.joueurs.includes(idJoueur) ? <Button className="bg-yellow-500 hover:bg-yellow-600" disabled={(isActive === false)} onClick={() => handleSubscribe(rowData)}>S'inscrire au tournoi</Button> : <div>Déja inscrit</div>}
+            {!rowData.joueurs.includes(idJoueur) ? <Button className="bg-yellow-500 hover:bg-yellow-600" disabled={(isActive === false || rowData.ferme)} onClick={() => handleSubscribe(rowData)}>S'inscrire au tournoi</Button> : <div>Déja inscrit</div>}
         </div>;
         
     }
@@ -120,12 +120,12 @@ import { createEquipe } from '../services/equipe-service'
                           paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown" rowsPerPageOptions={[10,25,50]}
                           dataKey="_id" rowHover
                           filters={filters} filterDisplay="menu" loading={isLoading} responsiveLayout="scroll"
-                          globalFilterFields={['nom', 'type.nom']}
+                          globalFilterFields={['nom', 'type.nom','date','genre']}
                           currentPageReportTemplate="Voir {first} de {last} à {totalRecords} tournois">
-                          <Column field="nom" header="Nom" sortable style={{ minWidth: '14rem' }} />
-                          <Column field="date" header="Date" sortable body={dateTemplate} style={{ minWidth: '14rem' }} />
-                          <Column field="type.nom" header="Type de Tournoi" sortable style={{ minWidth: '14rem' }} />
-                          <Column field="genre" header="genre" body={genreTemplate} sortable style={{ minWidth: '14rem' }} />
+                          <Column field="nom" header="Nom" sortable style={{ minWidth: '6rem' }} />
+                          <Column field="date" header="Date" sortable body={dateTemplate} style={{ minWidth: '6rem' }} />
+                          <Column field="type.nom" header="Type de Tournoi" sortable style={{ minWidth: '6rem' }} />
+                          <Column field="genre" header="genre" body={genreTemplate} sortable style={{ minWidth: '6rem' }} />
                           <Column headerStyle={{ width: '4rem', textAlign: 'center' }} bodyStyle={{ textAlign: 'center', overflow: 'visible' }} body={actionBodyTemplate} />
                       </DataTable>
                   </div>

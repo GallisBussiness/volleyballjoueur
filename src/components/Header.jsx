@@ -96,24 +96,23 @@ export function Header() {
         <div className={classes.inner}>
           <div className={classes.content}>
             <Title className={classes.title}>
-              Votre{' '}
+              SENEGAL{' '}
               <Text
-                component="span"
+                component="div"
                 inherit
                 variant="gradient"
                 gradient={{ from: 'pink', to: 'yellow' }}
               >
-                Club
+                 BEACH TOUR
               </Text>{' '}
-              De VolleyBall
             </Title>
             {isAuth() ? <div className="mt-10">
               <Link to="/dashboard"><Button className="bg-blue-500 hover:bg-blue-700">Tableau de Board</Button> </Link>
               <Button className="bg-yellow-500 hover:bg-yellow-700 uppercase mb-10 mx-2" onClick={logout}>Se Déconnecter</Button>
               </div> : <div className="mt-10"> <Link to="/login">
-              <Button className="bg-yellow-500 hover:bg-yellow-700 uppercase mr-10">Se Connecter</Button>
+              <Button className="bg-yellow-500 hover:bg-yellow-700 uppercase mr-10">Se Connecter au senegal beach tour</Button>
               </Link>
-               <Link to="/register"> <Button className="bg-yellow-500 hover:bg-yellow-700 uppercase">Creer un compte</Button></Link> </div>}
+               <Link to="/register"> <Button className="bg-green-500 hover:bg-green-700 uppercase">Creer un compte</Button></Link> </div>}
           </div>
         </div>
       </Container>

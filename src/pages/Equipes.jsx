@@ -41,9 +41,9 @@ function Equipes() {
 
     const header = renderHeader();
 
-    const CoequipierTemplate = (row) => `${row.idCoequipier.prenom} ${row.idCoequipier.nom}` ;
+    const CoequipierTemplate = (row) => `${row?.idCoequipier?.prenom ?? 'inconnue'} ${row?.idCoequipier?.nom ?? 'inconnue'}` ;
 
-    const CapitaineTemplate = (row) => `${row.idCapitaine.prenom} ${row.idCapitaine.nom}` ;
+    const CapitaineTemplate = (row) => `${row?.idCapitaine?.prenom ?? 'inconnue'} ${row?.idCapitaine?.nom ?? 'inconnue'}` ;
 
     const activationTemplate = (row) => {
         return row.isValidate ? 'valide'  : 'en cours de validation';

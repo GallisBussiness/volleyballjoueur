@@ -91,7 +91,7 @@ const onGlobalFilterChange = (e) => {
                           dataKey="_id" rowHover
                           filters={filters} filterDisplay="menu" loading={isLoading} responsiveLayout="scroll"
                           globalFilterFields={['date', 'equipeA.nom','equipeB.nom']}
-                          currentPageReportTemplate="Voir {first} de {last} à {totalRecords} matches">
+                          currentPageReportTemplate="Voir {first} de {last} à {totalRecords} matchs">
                           <Column body={matchTemplate} style={{ minWidth: '14rem' }} />
                           
                       </DataTable>

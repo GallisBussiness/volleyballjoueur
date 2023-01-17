@@ -72,7 +72,7 @@ const useStyles = createStyles((theme) => ({
 
 export function Dashboard() {
   const { classes, cx } = useStyles();
-  const [activeLink, setActiveLink] = useState('');
+  const [activeLink, setActiveLink] = useState('tournois');
   
   return (
     <>
@@ -88,7 +88,7 @@ export function Dashboard() {
         setActiveLink('tournois');
       }}
     >
-      Liste des Tournois
+      MES TOURNOIS
     </Link>
     <Link
       className={cx(classes.link, { [classes.linkActive]: activeLink === 'demandes' })}
@@ -97,7 +97,7 @@ export function Dashboard() {
         setActiveLink('demandes');
       }}
     >
-      Liste des Demandes
+      MES DEMANDES
     </Link>
     <Link
       className={cx(classes.link, { [classes.linkActive]: activeLink === 'equipes' })}
@@ -106,7 +106,7 @@ export function Dashboard() {
         setActiveLink('equipes');
       }}
     >
-      Liste des Equipes
+      MES EQUIPES
     </Link>
     <Link
       className={cx(classes.link, { [classes.linkActive]: activeLink === 'matchs' })}
@@ -115,7 +115,7 @@ export function Dashboard() {
         setActiveLink('matchs');
       }}
     >
-      Liste mes Matchs
+      MES MATCHS
     </Link>
         </div>
       </Navbar.Section>

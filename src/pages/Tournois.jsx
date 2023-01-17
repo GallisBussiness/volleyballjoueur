@@ -45,8 +45,8 @@ function Tournois() {
 
     const header = renderHeader();
 
-    const dateTemplate = (row) => format(parseISO(row.date),'dd-MM-yyyy');
-    const genreTemplate = (row) => row.genre === 'H' ? 'HOMME' : row.genre === 'F' ? 'FEMME' : 'MIXTE';
+    const dateTemplate = (row) => format(parseISO(row?.date),'dd-MM-yyyy');
+    const genreTemplate = (row) => row?.genre === 'H' ? 'HOMME' : row?.genre === 'F' ? 'FEMME' : 'MIXTE';
 
  return (
   <>
@@ -82,10 +82,10 @@ function Tournois() {
                           filters={filters} filterDisplay="menu" loading={isLoading} responsiveLayout="scroll"
                           globalFilterFields={['nom', 'type.nom']}
                           currentPageReportTemplate="Voir {first} de {last} à {totalRecords} tournois">
-                          <Column field="nom" header="Nom" sortable style={{ minWidth: '14rem' }} />
-                          <Column field="date" header="Date" sortable body={dateTemplate} style={{ minWidth: '14rem' }} />
-                          <Column field="type.nom" header="Type de Tournoi" sortable style={{ minWidth: '14rem' }} />
-                          <Column field="genre" header="genre" body={genreTemplate} sortable style={{ minWidth: '14rem' }} />
+                          <Column field="nom" header="Nom" sortable style={{ minWidth: '6rem' }} />
+                          <Column field="date" header="Date" sortable body={dateTemplate} style={{ minWidth: '6rem' }} />
+                          <Column field="type.nom" header="Type de Tournoi" sortable style={{ minWidth: '6rem' }} />
+                          <Column field="genre" header="genre" body={genreTemplate} sortable style={{ minWidth: '6rem' }} />
                       </DataTable>
                   </div>
               </div>
