@@ -6,12 +6,13 @@ import { useMutation, useQuery, useQueryClient } from 'react-query'
 import { InputText } from 'primereact/inputtext'
 import { getTournois } from '../services/tournoiservice'
 import { format, parseISO } from 'date-fns';
-import {  Button, LoadingOverlay } from '@mantine/core'
+import {  Button, LoadingOverlay,ActionIcon } from '@mantine/core'
 import { useIsAuthenticated } from 'react-auth-kit'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { showNotification } from '@mantine/notifications'
 import CreateEquipeModal from '../modals/CreateEquipeModal'
 import { createEquipe } from '../services/equipe-service'
+import { FaEye } from 'react-icons/fa'
   
   export function TournoiList({isActive, idJoueur}) {
 
@@ -81,6 +82,12 @@ import { createEquipe } from '../services/equipe-service'
     const actionBodyTemplate = (rowData) => {
         return <div className="flex items-center justify-center space-x-1">
             {!rowData.joueurs.includes(idJoueur) ? <Button className="bg-yellow-500 hover:bg-yellow-600" disabled={(isActive === false || rowData.ferme)} onClick={() => handleSubscribe(rowData)}>S'inscrire au tournoi</Button> : <div>Déja inscrit</div>}
+            <Link to={`/tournois/${rowData._id}`}>
+              <ActionIcon size="md">
+                <FaEye  className="h-12 w-12 text-blue-500"/>
+              </ActionIcon>
+            </Link>
+            
         </div>;
         
     }

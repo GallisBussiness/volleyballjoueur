@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, createStyles, Navbar } from '@mantine/core';
+import { Avatar, Button, createStyles, Navbar } from '@mantine/core';
 import { Link, Route, Routes } from 'react-router-dom';
 import Tournois from './Tournois';
 import Container from 'react-modal-promise';
@@ -79,6 +79,9 @@ export function Dashboard() {
     <div className="flex flex-col md:flex-row">
        <Navbar className="w-full md:w-2/12 h-auto md:h-screen">
        <Link to="/"><Button className="bg-blue-500 hover:bg-blue-700 mb-2 w-full rounded-none">Acceuil</Button> </Link>
+       <Navbar.Section>
+        <Avatar src="/img/logo.jpeg" size={200}/>
+      </Navbar.Section>
       <Navbar.Section grow className={classes.wrapper}>
         <div className={classes.main}>
         <Link

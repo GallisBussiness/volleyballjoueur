@@ -10,6 +10,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import { Dashboard } from './pages/Dashboard';
+import Tournoi from './pages/Tournoi';
 
 addLocale('fr', {
   firstDayOfWeek: 1,
@@ -60,6 +61,7 @@ function App() {
             <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
+            <Route path="/tournois/:id" element={<Tournoi />}/>
             <Route path="/dashboard/*" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />

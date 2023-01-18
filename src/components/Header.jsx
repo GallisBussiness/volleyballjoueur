@@ -1,4 +1,4 @@
-import { createStyles, Container, Title, Text, Button } from '@mantine/core';
+import { createStyles, Container, Title, Text, Button, Avatar } from '@mantine/core';
 import { useIsAuthenticated, useSignOut } from 'react-auth-kit';
 import { useQueryClient } from 'react-query';
 import { Link, useNavigate } from 'react-router-dom';
@@ -94,7 +94,9 @@ export function Header() {
     <div className={classes.root}>
       <Container size="lg">
         <div className={classes.inner}>
-          <div className={classes.content}>
+          <div className="flex items-center justify-center">
+          <Avatar src="/img/logo_sansfond.png" size={200}/>
+            <div className={classes.content}>
             <Title className={classes.title}>
               SENEGAL{' '}
               <Text
@@ -114,6 +116,8 @@ export function Header() {
               </Link>
                <Link to="/register"> <Button className="bg-green-500 hover:bg-green-700 uppercase">Creer un compte</Button></Link> </div>}
           </div>
+          </div>
+          
         </div>
       </Container>
     </div>
